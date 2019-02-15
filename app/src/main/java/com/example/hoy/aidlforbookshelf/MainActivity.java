@@ -35,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         dkHomeAgent = DkHomeAgent.init(this);
 
-        dkHomeAgent.queryBookshelfBooks(new QueryCallback<List<DkHomeBookInfo>>() {
+        dkHomeAgent.searchBooks("我的" ,new QueryCallback<List<DkHomeBookInfo>>() {
             @Override
             public void onQueryBack(DkHomeAgent agent, int code, List<DkHomeBookInfo> result) {
                 bookInfoArr = result;
                 setupView();
             }
         });
+
 
 //        dkHomeAgent.queryRecommendBooks(new QueryCallback<List<DkHomeBookInfo>>() {
 //            @Override
